@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "598437279127",
+    "project_id": "funytecaquizz",
+    "storage_bucket": "funytecaquizz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598437279127:android:2a4c378241250fc2ae80d2",
+        "android_client_info": {
+          "package_name": "com.example.funytecaquizz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "598437279127-75bh781edfe3frjvokpm9ao78csp1i63.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.funytecaquizz",
+            "certificate_hash": "e126d4410fd94db008cb6a380a127afc1d48c625"
+          }
+        },
+        {
+          "client_id": "598437279127-a6icg76pomeg16u8g6phvk1ambmde22l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-RfWXfMIc_4DrB5V1Kh3pWcTSCsBP_lI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "598437279127-a6icg76pomeg16u8g6phvk1ambmde22l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
