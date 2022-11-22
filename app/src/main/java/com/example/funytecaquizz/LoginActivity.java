@@ -114,11 +114,6 @@ public class LoginActivity extends AppCompatActivity {
 
     private void login()
     {
-
-    }
-
-    private void googleSignIn()
-    {
         progressDialog.show();
 
         mAuth.signInWithEmailAndPassword(email.getText().toString().trim(), pass.getText().toString().trim())
@@ -142,6 +137,11 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    private void googleSignIn()
+    {
+
 
     }
 

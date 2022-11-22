@@ -152,12 +152,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_toEndOf="@+id/g_img"
-            android:text="Cadastre-se com o Google"
-            android:gravity="center_vertical"
             android:layout_marginLeft="24dp"
-            android:textSize="20sp"
-            android:textColor="#ffffff" />
+            android:layout_toEndOf="@+id/g_img"
+            android:gravity="center_vertical"
+            android:text="Cadastre-se com o Google"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
 
 
     </RelativeLayout>
