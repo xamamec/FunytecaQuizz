@@ -45,12 +45,15 @@ public class CadastroActivity extends AppCompatActivity {
         cadastroB = findViewById(R.id.cadastroB);
         backB = findViewById(R.id.backB);
 
+        progressDialog = new Dialog(CadastroActivity.this);
+        progressDialog.setContentView(R.layout.dialog_layout);
+        progressDialog.setCancelable(false);
+        progressDialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT);
 
+        dialogText = progressDialog.findViewById(R.id.dialog_text);
+        dialogText.setText("Cadastrando...");
 
         mAuth = FirebaseAuth.getInstance();
-
-
-
 
         backB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,10 +137,6 @@ public class CadastroActivity extends AppCompatActivity {
                                     progressDialog.dismiss();
                                 }
                             }) ;
-
-
-
-
 
                         } else {
                             // If sign in fails, display a message to the user.
