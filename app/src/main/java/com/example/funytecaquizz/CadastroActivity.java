@@ -3,15 +3,19 @@ package com.example.funytecaquizz;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.identity.BeginSignInRequest;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -25,6 +29,8 @@ public class CadastroActivity extends AppCompatActivity {
     private ImageView backB;
     private FirebaseAuth mAuth;
     private String emailStr, senhaStr, confirmSenhaStr, nameStr;
+    private Dialog progressDialog;
+    private TextView dialogText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +44,11 @@ public class CadastroActivity extends AppCompatActivity {
         cadastroB = findViewById(R.id.cadastroB);
         backB = findViewById(R.id.backB);
 
+
+
         mAuth = FirebaseAuth.getInstance();
+
+
 
 
         backB.setOnClickListener(new View.OnClickListener() {
@@ -96,6 +106,8 @@ public class CadastroActivity extends AppCompatActivity {
 
     private void cadastroNewUser() {
 
+        progressDialog.show();
+
         mAuth.createUserWithEmailAndPassword(emailStr, senhaStr)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -103,7 +115,7 @@ public class CadastroActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
 
                             Toast.makeText(CadastroActivity.this, "Cadastro realizado com sucesso !", Toast.LENGTH_SHORT).show();
-
+                            progressDialog.dismiss();
                             Intent intent = new Intent(CadastroActivity.this,MainActivity.class);
                             startActivity(intent);
                             CadastroActivity.this.finish();
@@ -111,6 +123,7 @@ public class CadastroActivity extends AppCompatActivity {
 
                         } else {
                             // If sign in fails, display a message to the user.
+                            progressDialog.dismiss();
                             Toast.makeText(CadastroActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }
