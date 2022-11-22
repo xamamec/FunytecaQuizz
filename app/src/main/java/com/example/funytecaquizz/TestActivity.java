@@ -1,11 +1,13 @@
 package com.example.funytecaquizz;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,7 +60,14 @@ public class TestActivity extends AppCompatActivity {
         testList.add(new TestModel("4",10,40));
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
+        if(item.getItemId() == android.R.id.home)
+        {
+            TestActivity.this.finish();
+        }
 
-
+        return super.onOptionsItemSelected(item);
+    }
 }

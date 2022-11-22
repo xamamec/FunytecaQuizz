@@ -56,7 +56,7 @@ public class TestAdapter extends RecyclerView.Adapter<TestAdapter.ViewHolder> {
             progressBar = itemView.findViewById(R.id.testProgressbar);
         }
         private void setData(int pos, int progress){
-            testNo.setText("Test No: "  + String.valueOf(pos + 1));
+            testNo.setText("Quizz Num: "  + String.valueOf(pos + 1));
             topScore.setText(String.valueOf(progress)+" %");
 
             progressBar.setProgress(progress);
