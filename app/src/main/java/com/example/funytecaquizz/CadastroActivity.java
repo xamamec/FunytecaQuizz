@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.google.android.gms.auth.api.identity.BeginSignInRequest;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -115,10 +116,27 @@ public class CadastroActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
 
                             Toast.makeText(CadastroActivity.this, "Cadastro realizado com sucesso !", Toast.LENGTH_SHORT).show();
-                            progressDialog.dismiss();
-                            Intent intent = new Intent(CadastroActivity.this,MainActivity.class);
-                            startActivity(intent);
-                            CadastroActivity.this.finish();
+
+                            DbQuery.createUserData(emailStr, nameStr, new MyCompleteListener(){
+
+                                @Override
+                                public void onSuccess() {
+                                    progressDialog.dismiss();
+                                    Intent intent = new Intent(CadastroActivity.this,MainActivity.class);
+                                    startActivity(intent);
+                                    CadastroActivity.this.finish();
+                                }
+
+                                @Override
+                                public void onFailure() {
+
+                                    Toast.makeText(CadastroActivity.this,"Algo deu errado, tente novamente mais tarde!", Toast.LENGTH_SHORT).show();
+                                    progressDialog.dismiss();
+                                }
+                            }) ;
+
+
+
 
 
                         } else {
