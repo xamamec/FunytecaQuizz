@@ -172,7 +172,7 @@ public class LoginActivity extends AppCompatActivity {
 
             } catch (ApiException e){
                 //Log.w(TAG,"Login com o google falhou", e);
-                Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this,e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
     }
